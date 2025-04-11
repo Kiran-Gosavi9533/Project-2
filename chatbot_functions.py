@@ -6,7 +6,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 def query_ollama(message):
     try:
         # Define the Ollama executable path
-        ollama_path = "C:\\Users\\kiran\\AppData\\Local\\Programs\\Ollama\\ollama.exe"
+        ollama_path = "XYZ"
         
         # Run the Ollama model with input from stdin
         result = subprocess.run(
