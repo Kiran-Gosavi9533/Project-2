@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login to Chatbot</h1>
+        <form action="{{ url_for('login') }}" method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" autocomplete="off" required minlength="3">
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required minlength="6">
+            
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Error message display -->
+        {% if error %}
+            <p class="error-message">{{ error }}</p>
+            <script>
+                // Highlight incorrect fields
+                document.getElementById("username").classList.add("error-input");
+                document.getElementById("password").classList.add("error-input");
+            </script>
+        {% endif %}
+    </div>
+
+    <style>
+        .error-message {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .error-input {
+            border: 2px solid red !important;
+        }
+    </style>
+</body>
+</html>
